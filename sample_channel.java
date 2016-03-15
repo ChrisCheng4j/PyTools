@@ -9,6 +9,7 @@ import java.util.zip.ZipFile;
 
 public class ChannelConfig {
 
+    private static final String DEFAULT_CHANNEL = "";
     private static final String PREFIX = "channel";
     private static final String EXPRESSION = "_";
 
@@ -28,7 +29,7 @@ public class ChannelConfig {
                     if (split != null && split.length >= 2)
                         return entryName.substring(split[0].length() + 1);
                     else
-                        return "";
+                        return DEFAULT_CHANNEL;
                 }
             }
         } catch (IOException e) {
@@ -43,6 +44,6 @@ public class ChannelConfig {
             }
         }
 
-        return "";
+        return DEFAULT_CHANNEL;
     }
 }
