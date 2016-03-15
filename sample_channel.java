@@ -10,7 +10,7 @@ import java.util.zip.ZipFile;
 public class ChannelConfig {
 
     private static final String DEFAULT_CHANNEL = "";
-    private static final String PREFIX = "channel";
+    private static final String PREFIX = "META-INF/channel";
     private static final String EXPRESSION = "_";
 
     public static String getChannel() {
