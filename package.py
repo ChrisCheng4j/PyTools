@@ -20,7 +20,7 @@ if __name__ == '__main__':
         destfile = './release/%s_%s.apk' % (apk, channel)
         shutil.copy(apkFile, destfile)
         zipped = zipfile.ZipFile(destfile, 'a')
-        channelFile = "META-INF/{channelname}".format(channelname=channel)
+        channelFile = "META-INF/channel_{channelname}".format(channelname=channel)
         zipped.write(emptyFile, channelFile)
         zipped.close()
     os.remove('./empty.txt')
