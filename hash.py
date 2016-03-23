@@ -30,16 +30,16 @@ def traversal(output, filepath, type):
 
 def saveHashToFile(output, filename):
     file = open(filename, 'rb')
+    sign = hashlib.md5()
 
     while True:
         data = file.read(4096)
         if not data:
             break;
-        sign = hashlib.md5()
         sign.update(data)
 
     output.writelines(file.name.split('/')[-1] + " >>> " + sign.hexdigest() + '\r\n')
-    file.close
+    file.close()
 
 if __name__=='__main__':
     filepath = sys.argv[1]
